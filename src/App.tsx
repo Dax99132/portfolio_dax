@@ -13,6 +13,51 @@ import arrowRight from './assets/Rightarrow.svg';
 import arrowLeft from './assets/Leftarrow.svg';
 
 // --- DATA FROM RESUME ---
+const designsData = [
+  {
+    title: 'Rent Ease – Mobile App UI',
+    tech: ['Figma', 'UI/UX', 'Mobile App Design'],
+    description: [
+      'A mobile app design concept for renting/selling products with category-based navigation and clean UI.',
+    ],
+    link: '/designs/rent-ease', // This will be your future detail page
+  },
+  {
+    title: 'Cignifi – Mobile Authentication UI',
+    tech: ['Figma', 'UI/UX'],
+    description: [
+      'Splash screen, login, and signup flow focusing on modern, intuitive mobile authentication.',
+    ],
+    link: '/designs/cignifi',
+  },
+  {
+    title: 'ERP Mobile UI Concept',
+    tech: ['Figma', 'UI/UX', 'Dashboard Design'],
+    description: [
+      'Business-oriented ERP system design with clean login and dashboard screens for mobile.',
+    ],
+    link: '/designs/erp',
+  },
+  {
+    title: 'Cropify – Web Platform UI',
+    tech: ['Figma', 'UI/UX', 'Web Design'],
+    description: [
+      'A farmer-buyer platform with dashboard, product management, and direct trade features.',
+    ],
+    link: '/designs/cropify',
+  },
+  {
+    title: 'Quizze – Fun Interactive Quiz UI',
+    tech: ['Figma', 'UI/UX'],
+    description: [
+      'Playful and engaging quiz app design for students and creators with bright, intuitive layout.',
+    ],
+    link: '/designs/quizze',
+  },
+];
+
+
+
 const educationData = [
   { degree: 'Master of Computer Applications (MCA)', school: 'GLS University, Ahmedabad', years: '2024 - Present' },
   { degree: 'Bachelor of Computer Applications (BCA)', school: 'GLS University, Ahmedabad', years: '2021 - 2024' },
@@ -341,6 +386,38 @@ const Projects: React.FC = () => (
   </div>
 );
 
+const Designs: React.FC = () => (
+  <div id="designs" className="container mx-auto px-6">
+    <h2 className="text-4xl font-bold text-center text-black mb-12 font-bai-jamjuree">UI Designs</h2>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {designsData.map((design, i) => (
+        <a
+          key={i}
+          href={design.link}
+          className="bg-white border-2 border-black rounded-3xl p-6 flex flex-col transition-transform hover:scale-105 hover:shadow-xl cursor-pointer"
+        >
+          <div className="flex justify-between items-start mb-4">
+            <h3 className="text-xl font-bold font-bai-jamjuree text-black pr-4">{design.title}</h3>
+          </div>
+          <div className="mb-4">
+            <p className="font-semibold text-sm text-gray-600">Tools:</p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              {design.tech.map(t => (
+                <span key={t} className="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm">
+            {design.description.map((desc, j) => <li key={j}>{desc}</li>)}
+          </ul>
+        </a>
+      ))}
+    </div>
+  </div>
+);
+
 const Skills: React.FC = () => (
   <div id="skills" className="container mx-auto px-6 max-w-4xl">
     <h2 className="text-4xl font-bold text-center text-black mb-16 font-bai-jamjuree">Skills</h2>
@@ -400,6 +477,7 @@ export default function App() {
           <AnimatedSection className="py-20 md:py-32"><Experience /></AnimatedSection>
           <AnimatedSection className="py-20 md:py-32"><AchievementsAndActivities /></AnimatedSection>
           <AnimatedSection className="py-20 md:py-32"><Projects /></AnimatedSection>
+          <AnimatedSection className="py-20 md:py-32"><Designs /></AnimatedSection>
           <AnimatedSection className="py-20 md:py-32"><Skills /></AnimatedSection>
           <AnimatedSection className="py-20 md:py-32"><Contact /></AnimatedSection>
         </main>
