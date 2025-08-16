@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-intersection-observer": "latest",
@@ -18,5 +22,18 @@
     "@types/node": "^22.14.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
-  }
+  },
+  "description": "This contains everything you need to run your app locally.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dax99132/portfolio_dax.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dax99132/portfolio_dax/issues"
+  },
+  "homepage": "https://github.com/Dax99132/portfolio_dax#readme"
 }
